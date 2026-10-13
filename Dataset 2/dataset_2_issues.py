@@ -16,13 +16,13 @@ default_counts = (df.isin(default_placeholders).sum())
 print("\nDefault/placeholder values per column:")
 print(default_counts)
 
-# 4. Incorrect values – check categorical unique values
+# 4. Incorrect values - check categorical unique values
 categorical_cols = df.select_dtypes(include=['object']).columns
 print("\nUnique values per categorical column:")
 for col in categorical_cols:
     print(f"{col}: {df[col].unique()}")
 
-# 5. Inconsistent values – check numeric ranges
+# 5. Inconsistent values - check numeric ranges
 print("\nNumeric value ranges:")
 numeric_cols = df.select_dtypes(include=['int64', 'float64']).columns
 for col in numeric_cols:
